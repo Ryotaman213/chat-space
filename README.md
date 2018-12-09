@@ -35,6 +35,7 @@ email | text | null: false, unique: true
 password | text | null: false
 
 ### Association
+  has_many :members
 - has_many :groups, through: :members
 - has_many :messages
 
@@ -47,6 +48,7 @@ Column | Type | Options
 group_name | text | null: false
 
 ### Association
+has_many :messages
 has_many :members
 has_many :users, through: :members
 
