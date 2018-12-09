@@ -35,18 +35,18 @@ email | text | null: false, unique: true
 password | text | null: false
 
 ### Association
-- has_many :menbers, through: :groups
+- has_many :groups, through: :members
 - has_many :messages
 
 
 
-## groupテーブル
+## groupsテーブル
 
 Column | Type | Options
 --- | --- | ---
 group_name | text | null: false
 
 ### Association
-has_many :messages
-has_many :menbers, through: :users
+has_many :members
+has_many :users, through: :members
 
