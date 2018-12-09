@@ -3,12 +3,12 @@
 ## membersテーブル
 Column | Type | Options
 --- | --- | ---
-user_id | integer | null: false, foreign_key: true
-group_id | integer | index: true, null: false, foreign_key: true
+user_id | references | foreign_key: true
+group_id | references | foreign_key: true
 
 ### Association
 - belongs_to :group
-- hasmany :users
+- belongs_to :user
 
 
 
@@ -16,10 +16,10 @@ group_id | integer | index: true, null: false, foreign_key: true
 
 Column | Type | Options
 --- | --- | ---
-body | text | null: false, foreign_key: true
-image | string | null: false, foreign_key: true
-group_id | integer | index: true, null: false, foreign_key: true
-user_id | integer | null: false, foreign_key: true
+body | text | null: false
+image | string | null: false
+group_id | references | foreign_key: true
+user_id | references | foreign_key: true
 
 ### Association
 - belongs_to :group
@@ -30,13 +30,12 @@ user_id | integer | null: false, foreign_key: true
 
 Column | Type | Options
 --- | --- | ---
-name | text | index: true, null: false, foreign_key: true
-email | text | null: false, foreign_key: true
-password | text | null: false, foreign_key: true
-user_id | integer | null: false, foreign_key: true
+name | text | index: true, null: false
+email | text | null: false, unique: true
+password | text | null: false
 
 ### Association
-- belongs_to :menbers
+- has_many :menbers, through: :groups
 - has_many :messages
 
 
@@ -45,32 +44,9 @@ user_id | integer | null: false, foreign_key: true
 
 Column | Type | Options
 --- | --- | ---
-group_name | text | null: false, foreign_key: true
+group_name | text | null: false
 
 ### Association
 has_many :messages
-belongs_to:menbers
+has_many :menbers, through: :users
 
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
