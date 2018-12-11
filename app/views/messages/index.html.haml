@@ -1,0 +1,60 @@
+%div.notification
+  %div.notice グループが作成されました
+
+
+
+%div.chat-side
+  %div.chat-side__user
+    %div.chat-side__user-name ogawa
+    %i.fa.fa-edit
+    %i.fa.fa-cog
+
+
+
+  %div.chat-side__groups
+    %div.chat-side__groups-list
+      %div.chat-side__group-member 神
+      %div.chat-side__group-member akakak
+      %div.chat-side__group-name zzz
+      %div.chat-side__group-message まだメッセージはありません
+      %div.chat-side__group-name sampleグループ
+      %div.chat-side__group-message まだメッセージはありません
+
+
+
+
+
+%div.chat-main
+  %div.chat-main__header
+    %div.chat-main__header--group
+      %input{:type => "submit", :name => "edit", :value => "edit", :class => "edit", :datadisablewith => "Edit"}
+      %div.chat-main__header--group-name sampleグループ
+      %div.chat-main__header-members ogawa
+
+  %div.chat-main__members-box
+    %div.chat-main__members-chat
+      ryosuke
+      %i 2016/10/02 06:27:07
+      %p なるほど
+
+
+    %div.chat-main__members-chat
+      ryosuke
+      %i 2016/10/02 06:27:25
+      %p command Enterで送信したい感ある
+
+
+    %div.chat-main__members-chat
+      ryosuke
+      %i 2016/10/02 06:27:25
+      %p お腹すいた
+
+
+  %div.chat-main__footer-body
+    %input{:placeholder => "type a message", :class => "message", :type => "text", :name => "message[body]", :id => "message_body"}
+    %lebel.chat-file
+    %i.fa.fa-image
+    %input{:type => "submit", :name => "commit", :value => "Send", :class => "submit", :datadisablewith => "Send"}
+
+
+
