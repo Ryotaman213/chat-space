@@ -1,3 +1,6 @@
+$text-color: (#fff);
+$size: (15px);
+
 
   .notification {
     width: 100vw;
@@ -13,12 +16,12 @@
     height: 100vh;
     float: left;
     padding-top: 24px;
-    .chat-side__user {
+    &__user {
       height: 15vh;
       width: 100%;
       background-color: #253141;
       position: relative;
-      .chat-side__user-name {
+      &--name {
         padding-top: 36px;
         font-size: 16px;
         color: #FFFFFF;
@@ -31,7 +34,7 @@
       }
     }
   .fa-edit {
-    color: #fff;
+    color: $text-color;
     margin-right: 20px;
     margin-top:6px;
     padding-top: 36px;
@@ -41,7 +44,7 @@
   }
 
   .fa-cog {
-    color: #fff;
+    color: $text-color;
     margin-right:20px;
     margin-top:6px;
     padding-top: 36px;
@@ -54,85 +57,71 @@
     height: 85%;
     width: 100%;
     background-color: #2f3e51;
-  }
-
-  .chat-side__groups-list{
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .chat-side__group-member {
-    font-size: 15px;
     color: #FFFFFF;
-    margin-bottom:5px
+    &--list{
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
   }
+      .chat-side__group--member {
+        font-size: $size;
+        margin-top: 40px;
+        margin-bottom:5px;
+      }
+        .chat-side__group--name {
+          font-size: $size;
+          margin-top: 40px;
+        }
 
-  .chat-side__group-name {
-    color: #FFFFFF;
-    font-size: 15px;
-    margin-top: 40px;
-  }
-  .chat-side__group-message {
-    color: #FFFFFF;
-  }
 
   .chat-main {
     height: 100vh;
     width: calc( 100vw - 300px);
     float: right;
     padding-top: 24px;
-
-  .chat-main__header--group {
-    height: 105px;
-    width: calc( 100vw - 300px);
-    border-bottom: solid 1px #eeeeee;
-    margin-left: -40px;
-  }
+    &__header--group {
+      height: 105px;
+      width: calc( 100vw - 300px);
+      border-bottom: solid 1px #eeeeee;
+      margin-left: -40px;
+    }
   }
   .chat-main__header{
     margin-left: 40px;
     margin-right:40px;
+    &--group-name {
+      font-size: 20px;
+      color: #333333;
+      float:left;
+      padding-top: 40px;
+      margin-top: -20px;
+      margin-left: 40px;
   }
-  .chat-main__header--group-name {
-    font-size: 20px;
-    color: #333333;
-    float:left;
-    padding-top: 40px;
-    margin-top: -20px;
-    margin-left: 40px;
-  }
+}
   .edit{
     color: #38AEF0;
-    font-size: 15px;
+    font-size: $size;
     padding: 12.5px 20px;
     margin: 28px 20px 0;
     border: 1px solid #38AEF0;
     float: right;
-    // float:right;
-    // margin-top: 28px;
-    // height: 40px;
-    // width: 70px;
-    // line-height: 40px;
-    // padding-left: 20px;
-    // padding-right: 20px;
-    // margin-right: 40px;
   }
 
-  .chat-main__header-members {
+  .chat-main__header--members {
     font-size: 12px;
     color: #999999;
     padding-top: 65px;
     margin-left: 40px;
   }
 
-  .chat-main__members-box {
+  .chat-main__members--box {
     height: calc( 100vh - 101px - 90px );
     top: 125px;
     background-color: #AAAAAA;
   }
 
-  .chat-main__members-chat {
+  .chat-main__members--chat {
     float: left;
     padding-top: 46px;
     position: relative;
@@ -146,7 +135,7 @@
     width: 700px;
   }
 
-  .chat-main__footer-body {
+  .chat-main__footer--body {
     height: 90px;
     width: 100%;
   }
