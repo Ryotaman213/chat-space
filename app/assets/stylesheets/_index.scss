@@ -97,7 +97,6 @@ $size: (15px);
     float: right;
     padding-top: 24px;
     &__header--group {
-      height: 105px;
       width: calc( 100vw - 300px);
       border-bottom: solid 1px #eeeeee;
       margin-left: -40px;
@@ -119,7 +118,7 @@ $size: (15px);
     color: #38AEF0;
     font-size: $size;
     padding: 12.5px 20px;
-    margin: 28px 20px 0;
+    margin-right: 20px;
     border: 1px solid #38AEF0;
     float: right;
   }

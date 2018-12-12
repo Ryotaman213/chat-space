@@ -16,7 +16,7 @@
     .chat-side__groups--list
       .chat-side__group--member
       - current_user.groups.each do |group|
-      = link_to messages_path(group)
+      = link_to group_messages_path(group)
         .chat-side__group--name
         = group.name
         .chat-side__group--message
