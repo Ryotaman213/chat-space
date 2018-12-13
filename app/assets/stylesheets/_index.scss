@@ -47,7 +47,7 @@ $size: (15px);
         }
       }
     }
-  .fa {
+  .fa-edit:before, .fa-pencil-square-o:before {
     color: $white;
     margin-right: 20px;
     margin-top:6px;
@@ -55,9 +55,12 @@ $size: (15px);
     float:right;
     display: inline-block;
     font-size: 16px;
+    position: absolute;
+    top: 0;
+    right:25px;
   }
 
-  .fa {
+  .fa-cog:before {
     color: $white;
     margin-right:20px;
     margin-top:6px;
@@ -65,6 +68,9 @@ $size: (15px);
     float:right;
     display: inline-block;
     font-size: 16px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
   }
 
   .chat-side__groups {
@@ -72,10 +78,12 @@ $size: (15px);
     width: 100%;
     background-color: #2f3e51;
     color: #FFFFFF;
+    overflow:hidden;
     &--list{
       margin-top: 20px;
       margin-left: 20px;
       margin-right: 20px;
+
     }
   }
       .chat-side__group--member {
@@ -92,10 +100,11 @@ $size: (15px);
 
 
   .chat-main {
-    height: 100vh;
+    height: 100%;
     width: calc( 100vw - 300px);
     float: right;
     padding-top: 24px;
+    overflow: scroll;
     &__header--group {
       width: calc( 100vw - 300px);
       border-bottom: solid 1px #eeeeee;
@@ -131,7 +140,7 @@ $size: (15px);
   }
 
   .chat-main__members--box {
-    height: calc( 100vh - 101px - 90px );
+    height: calc( 100vh - 102px - 90px );
     top: 125px;
     background-color: #AAAAAA;
   }
@@ -150,29 +159,57 @@ $size: (15px);
     width: 700px;
   }
 
-  .chat-main__footer--body {
+  .chat-main__footer--wrapper {
     height: 90px;
-    width: 100%;
+    width: calc(100% - 300px);
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 
-  .message {
+  .new_message {
+    width: 900px;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 50px;
+    margin-top: 5px;
+  }
+
+  .fa-photo:before, .fa-image:before, .fa-picture-o:before {
+    font-weight: bold;
+    font-family:"Font Awesome 5 Free";
+    display: inline-block;
+    font-style: normal;
+    font-size: 15px;
+    position: absolute;
+    right: 150px;
+    top: 35px;
+
+
+  }
+
+  .form__message {
     height: 50px;
     width: 750px;
-    margin-top: 30px;
-    margin-left: 50px;
-    margin-bottom: 20px;
-    position: relative;
+    margin-top: 15px;
+    display: inline-block;
     color: #434A54;
   }
 
-   .submit {
+   .Send {
     width: 100px;
     height: 50px;
     text-align: center;
     background-color: #38AEF0;
     margin-top: 20px;
-    position: absolute;
-    bottom: -15px;
-    right: 40px;
+    display: inline-block;
     border: none;
+    position: absolute;
+    right: 20px;
+    top: 0;
    }
+
+    .hidden {
+      display: none;
+
+    }
