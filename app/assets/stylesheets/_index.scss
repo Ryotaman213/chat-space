@@ -138,19 +138,43 @@ $size: (15px);
     padding-top: 65px;
     margin-left: 40px;
   }
+  .chat-container {
+    background-color: #AAAAAA;
+    width: calc( 100% - 300px);
+    float: right;
+    overflow: scroll;
+    position: absolute;
+    top: 108px;
+    left: 300px;
+    z-index: -10;
+    height: calc( 100% - 198px);
+  }
 
   .chat-main__members--box {
-    height: calc( 100vh - 102px - 90px );
-    top: 125px;
-    background-color: #AAAAAA;
+    width: calc( 100vw - 300px);
+    float: right;
   }
 
   .chat-main__members--chat {
-    float: left;
-    padding-top: 46px;
-    position: relative;
-    width: 970px;
-    margin-left: 10px;
+    padding-top: 40px;
+    padding-left: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #434A54;
+    display: inline-block;
+  }
+
+  .message-date {
+    display: inline-block;
+    font-size: 12px;
+    color: #999999;
+    padding-left: 10px;
+  }
+
+  .message-content {
+    font-size: 14px;
+    color: #434A54;
+    padding-left: 40px;
   }
 
   .i {

@@ -1,4 +1,7 @@
 .wrapper
  = render 'shared/side_bar'
  = render 'shared/chat'
- = render  partial: 'shared/footer'
+.chat-container
+ = render partial: 'message', collection: @messages
+= render partial: 'shared/footer'
+
