@@ -1,5 +1,8 @@
-  .chat-main__footer--body
-    %input{placeholder: "type a message", class: "message", type: "text", name: "message[body]", id: "message_body"}
-    %lebel.chat-file
-    %i.fa.fa-image
-    %input{type: "submit", name: "commit", value: "Send", class: "submit", datadisablewith: "Send"}
+.chat-main__footer--wrapper
+  = form_for [@group, @message] do |f|
+    = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+    .chat-main__footer--body
+      = f.label :image, class: 'message_body' do
+        = fa_icon 'picture-o', class: 'icon'
+        = f.file_field :image, class: 'hidden'
+    = f.submit 'Send', class: 'Send'
