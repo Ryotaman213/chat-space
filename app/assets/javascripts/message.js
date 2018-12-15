@@ -37,11 +37,11 @@ $(function(){
       contentType: false,
     })
     .done(function(data){
-        var html = buildHTML(data);
-        $('.chat-container').append(html);
-        $('.form__message').val('');
-        $('.Send').prop('disabled', false);
-       scroll()
+      var html = buildHTML(data);
+      $('.chat-container').append(html);
+      $('.form__message').val('');
+      $('.Send').prop('disabled', false);
+      scroll()
     })
     .fail(function(){
         alert('error')
