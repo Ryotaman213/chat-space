@@ -31,7 +31,6 @@ var user_list = $(".user-search-result");
 
   $(".chat-group-form__input").on("keyup", function() {
     var input = $(this).val();
-    console.log(input);
 
     $.ajax({
       type: 'GET',
