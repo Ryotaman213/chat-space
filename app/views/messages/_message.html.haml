@@ -1,5 +1,5 @@
 
-.chat-main__members--box
+.chat-main__members--box{ "data-message-id": message.id}
   .chat-main__members--chat
     = message.user.name
   .message-date
@@ -9,11 +9,3 @@
       %p.message-content
         = message.content
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-
-
-  / .
-  /   .chat-main__members--chat
-  /     ryosuke
-  /     %i 2016/10/02 06:27:07
-  /     %p なるほど
-
