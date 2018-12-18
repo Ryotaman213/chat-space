@@ -5,7 +5,7 @@ $(function(){
       Image = '<img src = ${message.image} class = "lower-message__image">'
     }
 
-    var html = `<div class="chat-main__members--box">
+    var html = `<div class="chat-main__members--box" data-message-id="${message.id}">
                   <div class="chat-main__members--chat">
                     ${ message.user_name }
                   </div>
@@ -47,5 +47,27 @@ $(function(){
         alert('error')
         $('Send').prop('disabled', false);
     })
-})
+  $(function(){
+    setInterval(update, 5000);
+  });
+  function update(){
+  if (window.location.href.match(/\/groups\/\d+\/messages/))
+      var message_id = $('.chat-main__members--box:last').data('message-id');
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data: {
+        id: message_id
+      },
+      dataType: 'json'
+    })
+    .done(function(messages){
+      messages.forEach(function(message){
+      var html =  buildHTML(message);
+      $('.chat-container').append(html);
+      $('.chat-container').animate({scrollTop: $('.chat-container')[0].scrollHeight});
+      });
+    });
+  }
+});
 })
