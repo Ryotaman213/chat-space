@@ -2,7 +2,8 @@ $(function(){
   function buildHTML(message){
     var image = '';
     if (message.image) {
-      Image = '<img src = ${message.image} class = "lower-message__image">'
+      console.log('aaaaaaa');
+     var image = `<img class="lower-message__image" src=${ message.image }>`
     }
 
     var html = `<div class="chat-main__members--box" data-message-id="${message.id}">
@@ -16,6 +17,7 @@ $(function(){
                     <p class="message-content">
                       ${ message.content }
                     </p>
+                    ${ image }
                   </div>
                 </div>`;
     return html;
@@ -36,11 +38,13 @@ $(function(){
       processData: false,
       contentType: false,
     })
+
     .done(function(data){
       var html = buildHTML(data);
       $('.chat-container').append(html);
       $('.form__message').val('');
       $('.Send').prop('disabled', false);
+      $('form')[0].reset();
       scroll()
     })
     .fail(function(){

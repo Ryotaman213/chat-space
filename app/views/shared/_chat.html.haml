@@ -1,9 +1,14 @@
 .chat-main
   .chat-main__header
     .chat-main__header--group
-      %input{type: "submit", name: "edit", value: "edit", class: "edit", datadisablewith: "Edit"}
-      .chat-main__header--group-name sampleグループ
-      .chat-main__header--members ak
+      = link_to edit_group_path(@group.id) do
+        %input{type: "submit", name: "edit", value: "edit", class: "edit", datadisablewith: "Edit"}
+      .chat-main__header--group-name
+        = @group.name
+      .chat-main__header--members
+        - @group.users.each do |user|
+          = user.name
+
 
 
 
