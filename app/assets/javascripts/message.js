@@ -22,6 +22,9 @@ $(function(){
                 </div>`;
     return html;
   }
+  $(function(){
+  setTimeout("$('.notice').fadeOut('slow')", 1000)
+})
 
   function scroll() {
     $('.chat-container').animate({scrollTop: $('.chat-container')[0].scrollHeight});
@@ -43,13 +46,14 @@ $(function(){
       var html = buildHTML(data);
       $('.chat-container').append(html);
       $('.form__message').val('');
-      $('.Send').prop('disabled', false);
+      $('input.Send').prop('disabled', false);
       $('form')[0].reset();
       scroll()
     })
     .fail(function(){
         alert('error')
-        $('Send').prop('disabled', false);
+        $('input.Send').prop('disabled', false);
+
     })
   $(function(){
     setInterval(update, 5000);

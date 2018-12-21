@@ -39,6 +39,9 @@
       font-size: 13px;
     }
   }
+  a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove {
+    color: red;
+  }
 
   .chat-group-form__field {
     margin-top: 30px;
@@ -86,6 +89,10 @@
       content: "";
       clear: both;
       display: block;
+    }
+
+    p.chat-group-user{
+      border-style: none;
     }
 
 
